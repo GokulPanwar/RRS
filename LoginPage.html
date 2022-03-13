@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="captchaGenerator.js"></script>
+</head>
+
+<body onload="generateCaptcha();">
+    
+    <div class="container">
+        <form action="TakeData" method="post">
+            <table>
+                <tr>
+                    <img src="images/signInLogo.jpg" alt="logo" width="100" height="100">
+                    <h1>Login</h1>
+                    <hr>
+                </tr>
+                <br>
+                <tr>
+                    Login as :
+                    <select name="lmode" class="mode" required>
+                        <option value="">Choose option</option>
+                        <option value="Admin" aria-required="true">Admin</option>
+                        <option value="User" aria-required="true">User</option>
+                    </select>
+                </tr>
+                <br><br>
+
+                <tr>
+                    Username : <input type="text" name="username" placeholder="Enter username here" required>
+                </tr>
+                <br><br>
+                <tr>
+                    Password : <input type="password" name="password" placeholder="Enter password here" required>
+                </tr>
+                <br><br><br>
+                <tr>
+                    <input type="text" readonly = "readonly"  id="mainCaptcha">
+                    <button value="" onclick="generateCaptcha();" id="refresh"></button>
+                </tr>
+                <br><br>
+                <tr>
+                    <input type="text" id="txtInput" required>
+                    <button value="Check" id="check" onclick="checkValidCaptcha();">Check</button>
+                    <br>
+                    <span id="success" style="color: green;"></span>
+                    <span id="error" style="color: red;"></span>
+                </tr>
+                <br><br>
+                <tr>
+                    <input type="submit" class="sub" aria-disabled="true">
+                    <input type="reset" class="res">
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
