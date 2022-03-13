@@ -45,7 +45,7 @@ input
     border-color: gray;
     margin-left: 10px;
 }
-.sub,.res
+#sub,#res
 {
     width: 80px;
     height: 30px;
@@ -55,7 +55,7 @@ input
     border-radius: 3px;
     cursor: pointer;
 }
-.res
+#res
 {
     margin-left: 40px;
 }
