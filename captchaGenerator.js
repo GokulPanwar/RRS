@@ -31,13 +31,25 @@ function checkValidCaptcha()
 
     if (string1 == string2) 
     {
-        document.getElementById('success').innerHTML = "Captcha successfully verified.";   
-        document.getElementsByClassName('sub').disabled = false;
+        document.getElementById('success').innerHTML = "Captcha successfully verified."; 
+        setTimeout(
+            function()
+            {
+                document.getElementById('success').innerHTML =""; 
+            },3000
+        );
+        enableButton();
         return true;
     }
     else
     {
         document.getElementById('error').innerHTML = "Please enter a valid captcha!";
+        setTimeout(
+            function()
+            {
+                document.getElementById('error').innerHTML =""; 
+            },3000
+        );
         generateCaptcha();
         document.getElementsByClassName('sub').disabled = true;
         return false;
@@ -47,4 +59,9 @@ function checkValidCaptcha()
 function removeSpaces(string)
 {
     return string.split(' ').join('');
+}
+
+function enableButton()
+{
+    document.getElementById("sub").disabled = false;
 }
